@@ -6,7 +6,7 @@
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 17:24:03 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/05/17 19:08:20 by rde-fari         ###   ########.fr       */
+/*   Updated: 2024/05/21 18:14:06 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,15 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
 
 //---------Get Next Line Functions---------//
 
+int		ft_strlen(char *str);
 
+char	*get_next_line(int fd);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 //---------End If---------//
 #endif
