@@ -1,5 +1,0 @@
-1 percorrer os primeiros bytes do fd e armazenalos na variavel estatica
-2 ir adicionando a variavel estatica ate encontrar a quebra de linha
-3 toda vez que a funcao for chamada na main ele devolve a proximalinha
-(lembrando que a primeira linha e a proxima no inicio do programa uma vez
-que ele ainda nao executou nada)
