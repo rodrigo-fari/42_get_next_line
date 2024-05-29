@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rde-fari <rde-fari@student.42poto.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/17 17:22:48 by rde-fari          #+#    #+#             */
-/*   Updated: 2024/05/28 18:24:11 by rde-fari         ###   ########.fr       */
+/*   Created: 2024/05/28 15:57:04 by rde-fari          #+#    #+#             */
+/*   Updated: 2024/05/28 17:20:45 by rde-fari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
-	static char	*ptr;
+	static char	*ptr[MAX_FD];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	ptr = file_reader(ptr, fd);
-	if (!ptr)
+	ptr[fd] = file_reader(ptr[fd], fd);
+	if (!ptr[fd])
 	{
-		free(ptr);
+		free(ptr[fd]);
 		return (NULL);
 	}
-	line = get_esp_line(ptr);
-	ptr = remaining(ptr);
+	line = get_esp_line(ptr[fd]);
+	ptr[fd] = remaining(ptr[fd]);
 	return (line);
 }
 
